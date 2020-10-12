@@ -17,7 +17,7 @@ const Contact = ({ navigation, route }) => {
         placeholder="Enter your comments..."
       />
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Send Feedback</Text>
+        <Text style={styles.buttonText}>Send feedback</Text>
       </TouchableOpacity>
 
       {/* <Text>Contact</Text> */}
@@ -42,10 +42,13 @@ export default Contact;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#ccc",
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 20,
   },
   textInput: {
-    backgroundColor: "#fff",
+    backgroundColor: "#d3d3d3",
     height: 80,
     width: "100%",
   },
