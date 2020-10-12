@@ -8,22 +8,20 @@ import ListJobs from "./ListJobs";
 const Home = ({ navigation }) => {
   const [jobs, setJobs] = useState([]);
   useEffect(() => {
-    const fetchJobs = async () => {
-      const data = await api.getJobs();
-      setJobs(data.results);
-    };
     fetchJobs();
   }, []);
+
+  const fetchJobs = async () => {
+    const jobs = await api.getJobs();
+    setJobs(jobs.results);
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Jobs board</Text>
       <FlatList
         data={jobs}
-        renderItem={({ jobs }) => {
-          console.log(jobs, "<--jobs");
-          //   <ListJobs jobs={jobs} />;
-        }}
-      ></FlatList>
+        renderItem={({ item }) => <ListJobs key={item.jobId} item={item} />}
+      />
     </View>
   );
 };

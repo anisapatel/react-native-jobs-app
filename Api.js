@@ -14,10 +14,9 @@ let options = {
 };
 
 export const getJobs = () => {
-  return fetch(url, options).then((response) => {
-    response.json().then((data) => {
-      console.log(data, "<--data");
+  return fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
       return data;
     });
-  });
 };
