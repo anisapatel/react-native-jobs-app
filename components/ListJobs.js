@@ -21,7 +21,7 @@ const ListJobs = ({ item, navigation }) => {
     </TouchableOpacity>
   );
 };
-//type in job, location and search to send request parameters, query parameters
+//type in job, location and search to send request parameters, query parameters DONE
 // select job and navigate to single page to display more info -DONE
 // filter/sort box to filter job by date location expiry date salary range
 //link to take you to where you can apply for job so like an apply button -DONE

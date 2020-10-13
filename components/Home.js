@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Text, Button, FlatList } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Button,
+  FlatList,
+  ScrollView,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as api from "../Api";
 import ListJobs from "./ListJobs";
+import Search from "./Search";
 
 const Home = ({ navigation }) => {
   const [jobs, setJobs] = useState([]);
@@ -11,13 +19,14 @@ const Home = ({ navigation }) => {
     fetchJobs();
   }, []);
 
-  const fetchJobs = async () => {
-    const jobs = await api.getJobs();
+  const fetchJobs = async (keyword, location) => {
+    const jobs = await api.getJobs(keyword, location);
     setJobs(jobs.results);
   };
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Jobs board</Text>
+      <Search fetchJobs={fetchJobs} />
       <FlatList
         data={jobs}
         renderItem={({ item }) => (
