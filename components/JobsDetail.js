@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+// import * as Linking from "expo-linking";
+import * as WebBrowser from "expo-web-browser";
 
 const JobsDetail = (props) => {
   const { jobInfo } = props.route.params;
@@ -17,7 +19,10 @@ const JobsDetail = (props) => {
         Salary: £{jobInfo.minimumSalary} - £{jobInfo.maximumSalary} a year
       </Text>
       <Text style={styles.text}>Expires: {jobInfo.expirationDate}</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => WebBrowser.openBrowserAsync(`${jobInfo.jobUrl}`)}
+      >
         <Text style={styles.buttonText}>Apply</Text>
       </TouchableOpacity>
     </View>

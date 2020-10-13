@@ -22,9 +22,9 @@ const ListJobs = ({ item, navigation }) => {
   );
 };
 //type in job, location and search to send request parameters, query parameters
-// select job and navigate to single page to display more info
+// select job and navigate to single page to display more info -DONE
 // filter/sort box to filter job by date location expiry date salary range
-//link to take you to where you can apply for job so like an apply button
+//link to take you to where you can apply for job so like an apply button -DONE
 //scroll view to view more jobs
 
 export default ListJobs;
