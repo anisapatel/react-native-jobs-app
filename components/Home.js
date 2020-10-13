@@ -28,6 +28,7 @@ const Home = ({ navigation }) => {
       <Text style={styles.text}>Jobs board</Text>
       <Search fetchJobs={fetchJobs} />
       <FlatList
+        style={{ flex: 1 }}
         data={jobs}
         renderItem={({ item }) => (
           <ListJobs item={item} navigation={navigation} />

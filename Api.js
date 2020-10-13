@@ -15,7 +15,7 @@ let options = {
 
 export const getJobs = (keyword, location) => {
   return fetch(
-    `https://www.reed.co.uk/api/1.0/search?keywords=${keyword}&locationName=${location}&resultsToTake=4`,
+    `https://www.reed.co.uk/api/1.0/search?keywords=${keyword}&locationName=${location}&resultsToTake=20`,
     options
   )
     .then((response) => response.json())
