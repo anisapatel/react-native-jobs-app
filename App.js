@@ -7,6 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import JobsDetail from "./components/JobsDetail";
+import ListJobs from "./components/ListJobs";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +33,12 @@ export default function App() {
           name="Contact"
           component={Contact}
           initialParams={{ id: "Anisa" }}
+        />
+        <Stack.Screen name="ListJobs" component={ListJobs} />
+        <Stack.Screen
+          name="JobsDetail"
+          component={JobsDetail}
+          options={{ title: "Job Description" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

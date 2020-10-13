@@ -1,18 +1,31 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const ListJobs = ({ item }) => {
+const ListJobs = ({ item, navigation }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{item.jobTitle}</Text>
-      <Text style={styles.text}>{item.employerName}</Text>
-      <Text style={styles.text}>{item.locationName}</Text>
-      <Text style={styles.text}>
-        £{item.minimumSalary} - £{item.maximumSalary} a year
-      </Text>
-    </View>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("JobsDetail", {
+          jobInfo: item,
+        })
+      }
+    >
+      <View style={styles.container}>
+        <Text style={styles.text}>{item.jobTitle}</Text>
+        <Text style={styles.text}>{item.employerName}</Text>
+        <Text style={styles.text}>{item.locationName}</Text>
+        <Text style={styles.text}>
+          £{item.minimumSalary} - £{item.maximumSalary} a year
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
+//type in job, location and search to send request parameters, query parameters
+// select job and navigate to single page to display more info
+// filter/sort box to filter job by date location expiry date salary range
+//link to take you to where you can apply for job so like an apply button
+//scroll view to view more jobs
 
 export default ListJobs;
 

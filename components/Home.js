@@ -20,7 +20,9 @@ const Home = ({ navigation }) => {
       <Text style={styles.text}>Jobs board</Text>
       <FlatList
         data={jobs}
-        renderItem={({ item }) => <ListJobs item={item} />}
+        renderItem={({ item }) => (
+          <ListJobs item={item} navigation={navigation} />
+        )}
         keyExtractor={(item) => item.jobId.toString()}
       />
     </View>
